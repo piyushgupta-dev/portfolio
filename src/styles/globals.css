@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+.dark {
+  --bg: #050816;
+  --card: #0f172a;
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+}
+
+.light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --secondary: #7c3aed;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
