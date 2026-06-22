@@ -1,6 +1,6 @@
+
 import { motion } from "framer-motion";
 import { personalInfo } from "../../data/portfolioData";
-import developerImg from "../../assets/images/developer.png";
 
 function Hero() {
   const stats = [
@@ -62,19 +62,16 @@ function Hero() {
           max-w-7xl
           mx-auto
           w-full
-          grid
-          lg:grid-cols-[1.2fr_0.8fr]
-          gap-10
-          items-center
         "
       >
-        {/* LEFT SIDE */}
-
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="max-w-4xl"
         >
+          {/* Availability Badge */}
+
           <div
             className="
               inline-flex
@@ -93,6 +90,8 @@ function Hero() {
           >
             🚀 Available for Opportunities
           </div>
+
+          {/* Main Heading */}
 
           <h1
             className="
@@ -113,6 +112,8 @@ function Hero() {
             </span>
           </h1>
 
+          {/* Name */}
+
           <h2
             className="
               mt-8
@@ -124,6 +125,8 @@ function Hero() {
             {personalInfo.name}
           </h2>
 
+          {/* Headline */}
+
           <p
             className="
               mt-4
@@ -133,6 +136,8 @@ function Hero() {
           >
             {personalInfo.headline}
           </p>
+
+          {/* Description */}
 
           <p
             className="
@@ -145,7 +150,7 @@ function Hero() {
             {personalInfo.description}
           </p>
 
-          {/* CTA BUTTONS */}
+          {/* CTA Buttons */}
 
           <div className="flex flex-wrap gap-4 mt-8">
             <a
@@ -178,7 +183,7 @@ function Hero() {
             </a>
           </div>
 
-          {/* STATS */}
+          {/* Stats */}
 
           <div
             className="
@@ -212,159 +217,10 @@ function Hero() {
             ))}
           </div>
         </motion.div>
-
-        {/* RIGHT SIDE */}
-
-        <div className="relative flex justify-center items-center">
-
-          {/* React */}
-
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{
-              repeat: Infinity,
-              duration: 4,
-            }}
-            className="
-              absolute
-              top-10
-              left-0
-              bg-white/10
-              backdrop-blur-md
-              px-4
-              py-2
-              rounded-xl
-              text-sm
-              border
-              border-white/10
-            "
-          >
-            React
-          </motion.div>
-
-          {/* Firebase */}
-
-          <motion.div
-            animate={{ y: [10, -10, 10] }}
-            transition={{
-              repeat: Infinity,
-              duration: 5,
-            }}
-            className="
-              absolute
-              bottom-20
-              left-2
-              bg-white/10
-              backdrop-blur-md
-              px-4
-              py-2
-              rounded-xl
-              text-sm
-              border
-              border-white/10
-            "
-          >
-            Firebase
-          </motion.div>
-
-          {/* React Native */}
-
-          <motion.div
-            animate={{ y: [-8, 8, -8] }}
-            transition={{
-              repeat: Infinity,
-              duration: 6,
-            }}
-            className="
-              absolute
-              top-16
-              right-0
-              bg-white/10
-              backdrop-blur-md
-              px-4
-              py-2
-              rounded-xl
-              text-sm
-              border
-              border-white/10
-            "
-          >
-            React Native
-          </motion.div>
-
-          {/* Node */}
-
-          <motion.div
-            animate={{ y: [8, -8, 8] }}
-            transition={{
-              repeat: Infinity,
-              duration: 7,
-            }}
-            className="
-              absolute
-              bottom-20
-              right-2
-              bg-white/10
-              backdrop-blur-md
-              px-4
-              py-2
-              rounded-xl
-              text-sm
-              border
-              border-white/10
-            "
-          >
-            Node.js
-          </motion.div>
-
-          {/* AI */}
-
-          <motion.div
-            animate={{ y: [-6, 6, -6] }}
-            transition={{
-              repeat: Infinity,
-              duration: 8,
-            }}
-            className="
-              absolute
-              top-1/2
-              -right-8
-              bg-white/10
-              backdrop-blur-md
-              px-4
-              py-2
-              rounded-xl
-              text-sm
-              border
-              border-white/10
-            "
-          >
-            AI
-          </motion.div>
-
-          {/* Avatar */}
-
-          <motion.img
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            src={developerImg}
-            alt="Developer"
-            className="
-              relative
-              z-10
-              w-[300px]
-              md:w-[420px]
-              lg:w-[460px]
-              object-contain
-              select-none
-              pointer-events-none
-            "
-          />
-        </div>
       </motion.div>
     </section>
   );
 }
 
 export default Hero;
+
