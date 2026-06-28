@@ -51,6 +51,25 @@ function Navbar() {
             </a>
           ))}
 
+          {/* Resume Button */}
+
+          <a
+            href="/Piyush_Gupta.pdf"
+            download
+            className="
+              px-5
+              py-2
+              rounded-xl
+              bg-blue-600
+              hover:bg-blue-700
+              transition-all
+              duration-300
+              font-medium
+            "
+          >
+            Resume
+          </a>
+
           <ThemeToggle />
         </div>
 
@@ -86,13 +105,26 @@ function Navbar() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                onClick={() =>
-                  setIsOpen(false)
-                }
+                onClick={() => setIsOpen(false)}
               >
                 {item}
               </a>
             ))}
+
+            {/* Resume Button */}
+
+            <a
+              href="/Piyush_Gupta.pdf"
+              download
+              className="
+                bg-blue-600
+                text-center
+                py-3
+                rounded-xl
+              "
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       )}
