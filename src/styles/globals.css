@@ -1,15 +1,28 @@
 @import "tailwindcss";
 
+/* -------------------------------
+   Global Styles
+-------------------------------- */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: Inter, sans-serif;
+  background: #050816;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
-.dark {
+/* -------------------------------
+   Theme Variables (Dark Only)
+-------------------------------- */
+
+:root {
   --bg: #050816;
   --card: #0f172a;
   --text: #ffffff;
@@ -18,17 +31,67 @@ body {
   --secondary: #8b5cf6;
 }
 
-.light {
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --primary: #2563eb;
-  --secondary: #7c3aed;
+/* -------------------------------
+   Selection
+-------------------------------- */
+
+::selection {
+  background: #2563eb;
+  color: #ffffff;
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: all 0.3s ease;
+/* -------------------------------
+   Scrollbar
+-------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* -------------------------------
+   Links
+-------------------------------- */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------------------
+   Images
+-------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* -------------------------------
+   Buttons
+-------------------------------- */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* -------------------------------
+   Prevent Horizontal Overflow
+-------------------------------- */
+
+#root {
+  overflow-x: hidden;
 }

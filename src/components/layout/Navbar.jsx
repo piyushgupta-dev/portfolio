@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
-import ThemeToggle from "../common/ThemeToggle";
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,7 +32,7 @@ function Navbar() {
           Piyush Gupta
         </h1>
 
-        {/* Desktop Menu */}
+        {/* Desktop */}
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((item) => (
@@ -50,8 +48,6 @@ function Navbar() {
               {item}
             </a>
           ))}
-
-          {/* Resume Button */}
 
           <a
             href="/Piyush_Gupta.pdf"
@@ -69,28 +65,16 @@ function Navbar() {
           >
             Resume
           </a>
-
-          <ThemeToggle />
         </div>
 
         {/* Mobile */}
 
-        <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle />
-
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <HiX size={28} />
-            ) : (
-              <HiMenu size={28} />
-            )}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
 
       {isOpen && (
         <div
@@ -100,7 +84,7 @@ function Navbar() {
             backdrop-blur-lg
           "
         >
-          <div className="flex flex-col p-6 gap-5">
+          <div className="flex flex-col gap-5 p-6">
             {navLinks.map((item) => (
               <a
                 key={item}
@@ -111,16 +95,14 @@ function Navbar() {
               </a>
             ))}
 
-            {/* Resume Button */}
-
             <a
               href="/Piyush_Gupta.pdf"
               download
               className="
                 bg-blue-600
-                text-center
-                py-3
                 rounded-xl
+                py-3
+                text-center
               "
             >
               Download Resume
